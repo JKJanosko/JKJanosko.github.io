@@ -1,20 +1,15 @@
 <!DOCTYPE html>
 <html>
   <script>
-  function redirectByMobileOS() {
-    var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-  
-  //for Android
-      if (/android/i.test(userAgent)) {
-          window.location.href = "https://play.google.com/store/apps/details?id=com.jjanosko.Juego_Juegos_App";
-      }
-  
-  //For iPhone / iPad / iPod  (iOS
-      if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-          window.location.href = "https://apps.apple.com/us/app/juego-juegos/id6464535278?platform=iphone";
-      }
-  }
-  </script>
+        // Extract the redirect URL from the query parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const redirectUrl = urlParams.get('redirect');
+
+        // Redirect to the provided URL
+        if (redirectUrl) {
+            window.location.href = redirectUrl;
+        }
+    </script>
   <head>
     <meta property="og:image" content="https://juego.juegos/wp-content/uploads/2023/11/cottoncandy-1024x1024.png">
     <meta property="og:type"               content="article" />
