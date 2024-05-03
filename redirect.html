@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html>
-  <script>
-        function redirectToTarget() {
-            // Extract the redirect URL from the query parameter
+   <script>
+        // Function to handle redirect
+        function redirectToDeepLink() {
+            // Extract the deep link URL from the query parameter
             const urlParams = new URLSearchParams(window.location.search);
-            const redirectUrl = urlParams.get('redirect');
+            const deepLink = urlParams.get('deep_link');
 
-            // Redirect to the provided URL
-            if (redirectUrl) {
-                window.location.href = redirectUrl;
+            // Redirect to the provided deep link
+            if (deepLink) {
+                window.location.href = deepLink;
             }
         }
 
-        // Call the redirectToTarget function when the page finishes loading
-        window.onload = redirectToTarget;
+        // Call the redirectToDeepLink function when the page finishes loading
+        window.onload = redirectToDeepLink;
     </script>
   <head>
     <meta property="og:image" content="https://juego.juegos/wp-content/uploads/2023/11/cottoncandy-1024x1024.png">
